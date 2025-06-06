@@ -17,4 +17,10 @@ describe('HomeScreen', () => {
     fireEvent.press(button);
     // Currently it only logs to console; nothing to assert
   });
+
+  // ✅ Snapshot test
+  it('matches the snapshot', () => {
+    const { toJSON } = render(<HomeScreen />);
+    expect(toJSON()).toMatchSnapshot();
+  });
 });
