@@ -1,11 +1,14 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet, Image } from 'react-native';
+import { SafeAreaView, StyleSheet, Image, View } from 'react-native';
 import { Button, Text } from 'react-native-paper';
 
 export default function HomeScreen({ navigation }) {
   const handleStart = () => {
     console.log('Start button pressed!');
-    // navigation.navigate('NextScreen'); // later
+  };
+
+  const handleAuth = () => {
+    navigation.navigate('Login');
   };
 
   return (
@@ -18,6 +21,7 @@ export default function HomeScreen({ navigation }) {
       <Text style={styles.subtitle}>
         Learning and fun for every amazing child!
       </Text>
+
       <Button
         mode="contained"
         onPress={handleStart}
@@ -25,6 +29,15 @@ export default function HomeScreen({ navigation }) {
         labelStyle={styles.buttonText}
       >
         Start Learning
+      </Button>
+
+      <Button
+        mode="outlined"
+        onPress={handleAuth}
+        style={styles.authButton}
+        labelStyle={styles.authButtonText}
+      >
+        Login / Register
       </Button>
     </SafeAreaView>
   );
@@ -62,9 +75,21 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     paddingHorizontal: 30,
     paddingVertical: 10,
+    marginBottom: 20,
   },
   buttonText: {
     fontSize: 18,
     color: 'white',
+  },
+  authButton: {
+    borderColor: '#FF7EB3',
+    borderWidth: 2,
+    borderRadius: 30,
+    paddingHorizontal: 20,
+    paddingVertical: 6,
+  },
+  authButtonText: {
+    color: '#FF7EB3',
+    fontSize: 16,
   },
 });
