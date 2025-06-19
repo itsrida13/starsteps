@@ -15,6 +15,7 @@ export default function SignUpScreen({ navigation }) {
     city: '',
     email: '',
     password: '',
+
   });
 
   const handleChange = (field, value) => {
@@ -46,6 +47,7 @@ export default function SignUpScreen({ navigation }) {
       email,
       uid: user.uid,
       createdAt: new Date(),
+       //themePreference: 'light',
     });
 
     Toast.show({
