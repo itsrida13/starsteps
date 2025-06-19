@@ -78,7 +78,7 @@ export default function ChatScreen() {
         
         const dragDistance = Math.abs(gestureState.dy);
         
-        if (showFullPanel || (dragDistance > PANEL_HEIGHT * 0.5 && showSpinner)) {
+      if (showSpinner || showFullPanel || dragDistance > PANEL_HEIGHT * 0.2) {
           // Keep panel visible
           Animated.parallel([
             Animated.timing(translateY, {
